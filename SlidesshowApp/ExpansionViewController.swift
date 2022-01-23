@@ -18,7 +18,7 @@ class ExpansionViewController: UIViewController {
         
         imageView.image = selectImage
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
-        
+        backButton.titleLabel?.adjustsFontSizeToFitWidth = true
 
         // Do any additional setup after loading the view.
     }

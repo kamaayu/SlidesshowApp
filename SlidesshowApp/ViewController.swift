@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         
         let startimage = imageArray[nowIndex]
         imageView.image = startimage
+            
         
     }
     
