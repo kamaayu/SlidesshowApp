@@ -44,6 +44,14 @@ class ViewController: UIViewController {
             timer = nil
         }
         
+        if (timer == nil){
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        }
+        else{
+            nextButton.isEnabled = false
+            backButton.isEnabled = false
+        }
     }
     
     @IBAction func tapNextButton(_ sender:Any){
@@ -76,6 +84,7 @@ class ViewController: UIViewController {
             // indexを一番最初の数字に戻す
             nowIndex = 0
         }
+        
         // indexの画像をstoryboardの画像にセットする
         imageView.image = imageArray[nowIndex]
     }
@@ -84,13 +93,17 @@ class ViewController: UIViewController {
         if (segue.identifier == "toExpansionViewController"){
         let expantionViewController:ExpansionViewController = (segue.destination as? ExpansionViewController)!
             expantionViewController.selectImage = imageArray[nowIndex]
+            if self.timer != nil{
+                timer.invalidate()
+                self.timer = nil
+            }
+            imageView.image = imageArray[nowIndex]
         }
     }
-    @IBAction func onTapimage(_ sender: Any) {
+    
+    @IBAction func tapImage(_ sender: Any){
     }
     
-    @IBAction func tapImage(_ segue: UIStoryboardSegue) {
-        
     }
     
-}
+
