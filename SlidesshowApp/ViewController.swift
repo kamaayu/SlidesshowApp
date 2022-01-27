@@ -97,6 +97,8 @@ class ViewController: UIViewController {
                 timer.invalidate()
                 self.timer = nil
             }
+            nextButton.isEnabled = true
+            backButton.isEnabled = true
             imageView.image = imageArray[nowIndex]
         }
     }
